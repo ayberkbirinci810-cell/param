@@ -245,7 +245,7 @@ function openSheet(i) {
 // ---------- Ekstre içe aktarma ----------
 let pdfjs = null;
 async function readPdf(file) {
-  if (!pdfjs) { pdfjs = await import("./vendor/pdf.min.mjs"); pdfjs.GlobalWorkerOptions.workerSrc = new URL("./vendor/pdf.worker.min.mjs", import.meta.url).href; }
+  if (!pdfjs) { pdfjs = await import("./pdf.min.mjs"); pdfjs.GlobalWorkerOptions.workerSrc = new URL("./pdf.worker.min.mjs", import.meta.url).href; }
   return pdfToLines(pdfjs, new Uint8Array(await file.arrayBuffer()));
 }
 function preparePreview(lines) {
